@@ -4,10 +4,20 @@ public class BasicGameApp {
     public Dealer d1;
     public boolean gameOn;
 
+    public static void main(String[] args) {
+        BasicGameApp a = new BasicGameApp();
+
+    }
+
     public BasicGameApp(){
-        p1 = new Player();
-        d1 = new Dealer();
-        gameOn = true;
+        System.out.println("welcome to blackjack!");
+        deck = new Card[52];
+
+        for (int i = 0; i < 13;i++){
+            deck[i] = new Card(10,i, "Hearts");
+            deck[i].printInfo();
+
+        }
     }
 }
 

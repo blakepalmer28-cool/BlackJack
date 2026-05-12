@@ -18,6 +18,30 @@ public class BasicGameApp {
             deck[i].printInfo();
 
         }
+        for (int i = 0; i < 13;i++){
+            deck[i] = new Card(10,i, "Clubs");
+            deck[i].printInfo();
+
+        }
+        for (int i = 0; i < 13;i++){
+            deck[i] = new Card(10,i, "Diamond");
+            deck[i].printInfo();
+
+        }
+        for (int i = 0; i < 13;i++){
+            deck[i] = new Card(10,i, "Spades");
+            deck[i].printInfo();
+
+        }
+        printDeck();
+    }
+
+    public void printDeck(){
+        for (int i =0; i<deck.length;i++ ){
+            System.out.println(deck[i]);
+        }
+
+
     }
 }
 

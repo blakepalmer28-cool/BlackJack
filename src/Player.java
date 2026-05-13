@@ -8,7 +8,7 @@ public class Player {
     public Player(){
         cardTotal = 52;
         isBust = true;
-        //hand = idk;
+        hand = new Card[2];
         isHit = true;
         name = "Thomas Hyland";
     }

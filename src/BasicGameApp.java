@@ -13,27 +13,27 @@ public class BasicGameApp {
         System.out.println("welcome to blackjack!");
         deck = new Card[52];
 
-        for (int i = 0; i < 13;i++){
-            deck[i] = new Card(10,i, "Hearts");
-            deck[i].printInfo();
-
+        int cardIndex = 0;
+        for(int x = 0;x<4; x++){
+            for(int i = 0; i < 13;i++){
+                deck[cardIndex] = new Card(10,i, x);
+                cardIndex++;
+               //deck[i].printInfo();
         }
-        for (int i = 0; i < 13;i++){
-            deck[i] = new Card(10,i, "Clubs");
-            deck[i].printInfo();
 
-        }
-        for (int i = 0; i < 13;i++){
-            deck[i] = new Card(10,i, "Diamond");
-            deck[i].printInfo();
-
-        }
-        for (int i = 0; i < 13;i++){
-            deck[i] = new Card(10,i, "Spades");
-            deck[i].printInfo();
 
         }
         printDeck();
+        shufflie();
+    }
+
+    public void shufflie(){
+        for (int i =0; i< deck.length;i++){
+            int randy= (int)(Math.random()*52);
+            Card helper = deck[randy];
+            deck[randy]=deck[i];
+            deck[i]=helper;
+        }
     }
 
     public void printDeck(){

@@ -9,7 +9,7 @@ public class Dealer {
     public Dealer(){
         isOver16= true;
         cardTotal = 52;
-        // hand = idk
+        hand = new Card[2];
         isBust = true;
 
     }

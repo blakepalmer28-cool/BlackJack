@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class BasicGameApp {
     public Card[]deck;
     public Player p1;
@@ -12,6 +14,8 @@ public class BasicGameApp {
     public BasicGameApp(){
         System.out.println("welcome to blackjack!");
         deck = new Card[52];
+        p1 = new Player();
+        d1 = new Dealer();
 
         int cardIndex = 0;
         for(int x = 0;x<4; x++){
@@ -25,6 +29,20 @@ public class BasicGameApp {
         }
         printDeck();
         shufflie();
+
+        //give the player crds
+        p1.hand[0]= deck [0];
+        p1.hand[1]= deck [1];
+        //todo hw: give the dealer 2 cards]
+        //ask the user a question
+            Scanner s = new Scanner(System.in);
+            System.out.println("what is your name?");
+            String aName = s.nextLine();
+            System.out.println(aName);
+            p1.name = aName;
+            p1.calculateTotal();;;
+            p1.printInfo();
+
     }
 
     public void shufflie(){

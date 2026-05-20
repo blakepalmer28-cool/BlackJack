@@ -33,6 +33,10 @@ public class BasicGameApp {
         //give the player crds
         p1.hand[0]= deck [0];
         p1.hand[1]= deck [1];
+        d1.hand[0]= deck[2];
+        d1.hand[1]= deck[3];
+        d1.calculateTotal();
+        d1.printInfo();
         //todo hw: give the dealer 2 cards]
         //ask the user a question
             Scanner s = new Scanner(System.in);

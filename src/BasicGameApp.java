@@ -8,7 +8,6 @@ public class BasicGameApp {
 
     public static void main(String[] args) {
         BasicGameApp a = new BasicGameApp();
-
     }
 
     public BasicGameApp(){
@@ -37,15 +36,29 @@ public class BasicGameApp {
         d1.hand[1]= deck[3];
         d1.calculateTotal();
         d1.printInfo();
-        //todo hw: give the dealer 2 cards]
+        //todo hw: give the dealer 2 cards]= Done
         //ask the user a question
             Scanner s = new Scanner(System.in);
+            System.out.println("ANSWER ALL QUESTIONS WITH LOWERCASE");
             System.out.println("what is your name?");
             String aName = s.nextLine();
             System.out.println(aName);
+
             p1.name = aName;
-            p1.calculateTotal();;;
+            p1.calculateTotal();
             p1.printInfo();
+
+            System.out.println("Do you want to hit or stand?");
+            if (s.nextLine().equals("hit")){
+                p1.isHit=true;
+            }
+            else if(p1.isHit=true){
+                System.out.println("You chose to hit");
+            }
+
+
+            p1.printInfo();
+            p1.calculateTotal();
 
     }
 
@@ -60,9 +73,8 @@ public class BasicGameApp {
 
     public void printDeck(){
         for (int i =0; i<deck.length;i++ ){
-            System.out.println(deck[i]);
+            deck[i].printInfo();
         }
-
 
     }
 }

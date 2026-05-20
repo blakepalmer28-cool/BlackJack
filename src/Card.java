@@ -43,6 +43,10 @@ public class Card {
             value = 9;
         }
         else if(pName ==9){
+            name = "Ten";
+            value = 10;
+        }
+        else if(pName ==10){
             name = "Jack";
             value = 10;
         }
@@ -58,6 +62,10 @@ public class Card {
             suit = "Hearts";
         } else if (pSuit==1){
             suit = "Clubs";
+        } else if (pSuit==2){
+        suit = "Diamonds";
+        }else if (pSuit==3){
+            suit = "Spades";
         }
 
 

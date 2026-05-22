@@ -51,10 +51,15 @@ public class BasicGameApp {
             System.out.println("Do you want to hit or stand?");
             if (s.nextLine().equals("hit")){
                 p1.isHit=true;
-            }
-            else if(p1.isHit=true){
                 System.out.println("You chose to hit");
+                p1.hand= new Card[3];
+                p1.hand[0]= deck [0];
+                p1.hand[1]= deck [1];
+                p1.hand[2]= deck[4];
+                p1.calculateTotal();
+                p1.printInfo();
             }
+
 
 
             p1.printInfo();

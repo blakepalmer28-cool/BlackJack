@@ -24,7 +24,7 @@ public class Player {
     }
     //todo: make a method called calculateTotal
     public void calculateTotal(){
-        int addValue = 10;
+        int addValue = 0;
         for (int d =0; d< hand.length; d++){
             addValue = addValue +hand[d].value;
 

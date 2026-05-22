@@ -79,3 +79,4 @@ public class BasicGameApp {
     }
 }
 
+//plan what i need to do

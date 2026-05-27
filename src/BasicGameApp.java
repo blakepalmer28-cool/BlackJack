@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.Scanner;
 
 public class BasicGameApp {
@@ -59,6 +60,18 @@ public class BasicGameApp {
                 p1.calculateTotal();
                 p1.printInfo();
             }
+             if (s.nextLine().equals("hit")){
+            p1.isHit=true;
+            System.out.println("You chose to hit");
+            p1.hand= new Card[3];
+            p1.hand[0]= deck [0];
+            p1.hand[1]= deck [1];
+            p1.hand[2]= deck[4];
+            p1.calculateTotal();
+            p1.printInfo();
+        }
+
+
 
 
 
@@ -82,6 +95,7 @@ public class BasicGameApp {
         }
 
     }
+
 }
 
 //plan what i need to do

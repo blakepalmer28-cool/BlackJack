@@ -4,6 +4,7 @@ public class Dealer {
     public boolean isOver16;
     public int cardTotal;
     public Card[]hand;
+    public boolean isHit;
     public boolean isBust;
 
     public Dealer(){
@@ -11,6 +12,7 @@ public class Dealer {
         cardTotal = 0;
         hand = new Card[2];
         isBust = false;
+        isHit = false;
 
     }
     public void calculateTotal(){
@@ -23,6 +25,7 @@ public class Dealer {
     public void printInfo(){
         System.out.println("card totoal:"+cardTotal);
         System.out.println("isBust:"+isBust);
+        System.out.println("isHit):"+isHit);
         for (int s =0; s< hand.length; s++){
             hand[s].printInfo();
         }

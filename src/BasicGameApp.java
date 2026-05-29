@@ -59,7 +59,7 @@ public class BasicGameApp {
                 p1.hand[2]= deck[4];
                 p1.calculateTotal();
                 p1.printInfo();
-            }
+            }//logic
              if (s.nextLine().equals("hit")){
             p1.isHit=true;
             System.out.println("You chose to hit");

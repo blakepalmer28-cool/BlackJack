@@ -60,16 +60,31 @@ public class BasicGameApp {
                 p1.calculateTotal();
                 p1.printInfo();
             }//logic
-             if (s.nextLine().equals("hit")){
-            p1.isHit=true;
-            System.out.println("You chose to hit");
-            p1.hand= new Card[3];
-            p1.hand[0]= deck [0];
-            p1.hand[1]= deck [1];
-            p1.hand[2]= deck[4];
-            p1.calculateTotal();
-            p1.printInfo();
-        }
+             else if(s.equals("stand")){
+                 p1.isHit = false;
+                System.out.println("You chose to stand");
+
+                System.out.println("Dealer reveals cards:");
+                d1.printInfo();
+
+                if(d1.cardTotal <17){
+                    System.out.println("The Dealer Hits");
+                    d1.hand[0]= deck [0];
+                    d1.hand[1]= deck [1];
+                    d1.hand[2]=deck[3];
+                    d1.calculateTotal();
+                    d1.printInfo();
+                }
+                else if(d1.cardTotal >16){
+                    d1.isHit = false;
+                    System.out.println("The Dealer Stands");
+
+                    d1.printInfo();
+                }
+                if(p1.cardTotal>d1.cardTotal){
+
+                }
+            }
 
 
 

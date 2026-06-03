@@ -12,9 +12,10 @@ public class Player {
         isHit = false;
         name = "Thomas Hyland";
     }
+
     public void  printInfo(){
         System.out.println("name:"+name);
-        System.out.println("card totoal:"+cardTotal);
+        System.out.println("card total:"+cardTotal);
         System.out.println("isBust:"+isBust);
         System.out.println("isHit:"+isHit);
         for (int s =0; s< hand.length; s++){
@@ -30,6 +31,11 @@ public class Player {
 
         }
         cardTotal = addValue;
+        if(cardTotal >21){
+            isBust = true;
+        }
     }
+
+
 
 }

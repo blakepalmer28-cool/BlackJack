@@ -30,17 +30,16 @@ public class BasicGameApp {
         printDeck();
         shufflie();
 
-        //give the player crds
+        //give the player cards at the start
         p1.hand[0]= deck [0];
         p1.hand[1]= deck [1];
         d1.hand[0]= deck[2];
-        d1.hand[1]= deck[3];
-        d1.calculateTotal();
-        d1.printInfo();
+        d1.hand[1]= deck[6];
         //todo hw: give the dealer 2 cards]= Done
         //ask the user a question
             Scanner s = new Scanner(System.in);
             System.out.println("ANSWER ALL QUESTIONS WITH LOWERCASE");
+            System.out.println(" ");
             System.out.println("what is your name?");
             String aName = s.nextLine();
             System.out.println(aName);
@@ -49,8 +48,11 @@ public class BasicGameApp {
             p1.calculateTotal();
             p1.printInfo();
 
+
+            System.out.println(" ");
             System.out.println("Do you want to hit or stand?");
-            if (s.nextLine().equals("hit")){
+            String answer = s.nextLine();
+            if (answer.equals("hit")){
                 p1.isHit=true;
                 System.out.println("You chose to hit");
                 p1.hand= new Card[3];
@@ -59,40 +61,129 @@ public class BasicGameApp {
                 p1.hand[2]= deck[4];
                 p1.calculateTotal();
                 p1.printInfo();
+
+                if (p1.cardTotal>21){
+                    System.out.println("You busted!");
+                    d1.calculateTotal();
+                    d1.printInfo();
+                    if (d1.cardTotal > 21){
+                        System.out.println("The Dealer busted");
+                    }
+                    else{
+                        System.out.println("Dealer wins");
+                    }
+                }else{
+                    System.out.println(" ");
+                    System.out.println("Do You want to hit or stand?");
+                    String answer2 = s.nextLine();
+                    if (answer2.equals("hit")) {
+                        p1.hand = new Card[5];
+                        p1.hand[0] = deck[0];
+                        p1.hand[1] = deck[1];
+                        p1.hand[2] = deck[4];
+                        p1.hand[3] = deck[5];
+                        p1.hand[4]= deck[9];
+
+                        p1.calculateTotal();
+                        p1.printInfo();
+                        if (p1.cardTotal > 21) {
+                            System.out.println(" ");
+                            System.out.println("You busted!");
+                            System.out.println(" ");
+                            d1.calculateTotal();
+                            d1.printInfo();
+                            if (d1.isBust==true && p1.isBust == true){
+                                System.out.println("Both busted! Its a Tie!!!");
+                            }
+                            else{
+                                System.out.println("Dealer wins!!!");
+                            }
+                        }
+
+                    }
+                    else if(answer2.equals("stand")) {
+                        System.out.println(" ");
+                        System.out.println("Dealer reveals cards:");
+                        System.out.println(" ");
+                        d1.printInfo();
+
+                        if(d1.cardTotal <17){
+                            System.out.println(" ");
+                            System.out.println("The Dealer Hits");
+                            System.out.println(" ");
+                            d1.hand = new Card[3];
+                            d1.hand[0]= deck [2];
+                            d1.hand[1]= deck [6];
+                            d1.hand[2]=deck[7];
+                            d1.calculateTotal();
+                            d1.printInfo();
+                        }
+                        if (d1.cardTotal>21) {
+                            System.out.println("Both busted! Its a Tie!!!");
+                        }
+                        else if(p1.cardTotal>d1.cardTotal){
+                            System.out.println(" ");
+                            System.out.println("You Win!!!");
+                        }
+                        else if (d1.cardTotal>p1.cardTotal){
+                            System.out.println(" ");
+                            System.out.println("You Lose!!!");
+                        }
+                        else {
+                            System.out.println("Its a Tie!!!");
+                        }
+
+
+                    }
+                }
             }//logic
-             else if(s.equals("stand")){
+             else if(answer.equals("stand")){
                  p1.isHit = false;
+                System.out.println(" ");
                 System.out.println("You chose to stand");
+                System.out.println(" ");
+
 
                 System.out.println("Dealer reveals cards:");
+                System.out.println(" ");
                 d1.printInfo();
 
                 if(d1.cardTotal <17){
+                    System.out.println(" ");
                     System.out.println("The Dealer Hits");
-                    d1.hand[0]= deck [0];
-                    d1.hand[1]= deck [1];
-                    d1.hand[2]=deck[3];
+                    System.out.println(" ");
+                    d1.hand= new Card[3];
+                    d1.hand[0]= deck [2];
+                    d1.hand[1]= deck [6];
+                    d1.hand[2]=deck[7];
                     d1.calculateTotal();
                     d1.printInfo();
                 }
-                else if(d1.cardTotal >16){
-                    d1.isHit = false;
-                    System.out.println("The Dealer Stands");
 
-                    d1.printInfo();
+                if(d1.cardTotal>21){
+                    System.out.println("Dealer busted! You Win!!!");
                 }
+
                 if(p1.cardTotal>d1.cardTotal){
-
+                    System.out.println(" ");
+                    System.out.println("You Win!!!");
+                    System.out.println(" ");
                 }
+                else if(d1.cardTotal>p1.cardTotal){
+                    System.out.println(" ");
+                    System.out.println("You Lose!!!");
+                    System.out.println(" ");
+                }
+                else {
+                    System.out.println(" ");
+                    System.out.println("Its a Tie!!!");
+                    System.out.println(" ");
+                }
+
+
+
+
             }
-
-
-
-
-
-            p1.printInfo();
-            p1.calculateTotal();
-
     }
 
     public void shufflie(){

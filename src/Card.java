@@ -10,7 +10,8 @@ public class Card {
         if (pName ==0){
              name = "Ace";
              value = 11;
-        }else if (pName ==1){
+        }
+        else if (pName ==1){
             name = "two";
             value = 2;
         }
@@ -72,7 +73,7 @@ public class Card {
     }
 
     public void printInfo(){
-        System.out.println("The"+name + "of" +suit+ "is worth" + value+ "of points");
+        System.out.println("The "+name + " of " +suit+ " is worth " + value+ " points");
 
     }
 
